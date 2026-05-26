@@ -1,7 +1,12 @@
 import BankIntegration from '@/components/BankIntegration'
+import ClientKindWordsSection from '@/components/ClientKindWordsSection'
+import FeatureCardsSection from '@/components/FeatureCardsSection'
 import FeaturesBentoSection from '@/components/FeaturesBentoSection'
+import FeaturesSection from '@/components/FeaturesSection'
 import HeroSection from '@/components/HeroSection'
 import Navbar from '@/components/Navbar'
+import PricingComparisonSection from '@/components/PricingComparisonSection'
+import SmartBooksFooter from '@/components/SmartBooksFooter'
 import SmartBooksUseCaseHero from '@/components/SmartBooksUseCaseHero'
 import SocialProofSection from '@/components/SocialProofSection'
 import React from 'react'
@@ -13,8 +18,18 @@ function index() {
       <HeroSection />
       <SocialProofSection />
       <BankIntegration /> 
+
       <FeaturesBentoSection />
+
       <SmartBooksUseCaseHero />
+
+      <FeaturesSection />                       
+       <FeatureCardsSection />
+       <PricingComparisonSection />
+       <ClientKindWordsSection />
+       <SmartBooksFooter />
+       
+
     </>
   )
 }

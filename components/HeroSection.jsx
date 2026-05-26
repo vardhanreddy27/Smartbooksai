@@ -428,9 +428,9 @@ function HeroCopy({ activeIndustry }) {
   return (
     <div ref={copyRef}>
       <div className="mb-4 overflow-hidden">
-        <div className="text-up invisible inline-flex items-center gap-2 rounded-full border border-[#d8d2f0] bg-[#f1efff] px-4 py-2">
-          <span className="h-2 w-2 rounded-full bg-[#5244a7]" />
-          <span className="text-xs font-black text-[#5244a7]">
+        <div className="text-up invisible inline-flex items-center gap-2  px-4 py-2">
+          <span className="h-2 w-2 rounded-full " />
+          <span className="text-xs font-black">
             {industry.eyebrow}
           </span>
         </div>
@@ -776,26 +776,43 @@ export default function HeroSection() {
 
           <TrustCircles />
 
-          <div className="static-reveal invisible mt-5 flex flex-wrap gap-2">
-            {industries.map((item) => {
-              const isActive = item.id === activeIndustry;
+       <div className="static-reveal invisible mt-5 flex flex-wrap items-center gap-8">
+  {industries.map((item) => {
+    const isActive = item.id === activeIndustry;
 
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => setActiveIndustry(item.id)}
-                  className={`rounded-full border px-4 py-2 text-sm font-bold shadow-sm transition ${
-                    isActive
-                      ? "border-[#5244a7] bg-[#5244a7] text-white"
-                      : "border-[#e2def4] bg-white text-slate-600 hover:border-[#5244a7] hover:text-[#5244a7]"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </div>
+    return (
+      <button
+        key={item.id}
+        type="button"
+        onClick={() => setActiveIndustry(item.id)}
+        className={`relative bg-transparent p-0 pb-3 text-[18px] font-black transition duration-300 ${
+          isActive
+            ? "text-[#5244a7]"
+            : "text-slate-500 hover:text-[#5244a7]"
+        }`}
+      >
+        {item.label}
+
+        {isActive && (
+          <svg
+            className="absolute -bottom-1 left-1/2 h-4 w-[110%] -translate-x-1/2"
+            viewBox="0 0 120 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 11C18 4 30 16 44 9C58 2 72 15 86 8C100 2 110 10 116 7"
+              stroke="#5244a7"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        )}
+      </button>
+    );
+  })}
+</div>
         </div>
 
         <ProductCard
