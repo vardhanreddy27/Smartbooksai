@@ -199,12 +199,39 @@ const rows = [
   },
 ];
 
+const mobileHighlights = [
+  {
+    title: "Lower starting cost",
+    smartbooks: "₹2,999",
+    others: "₹3,855 to ₹6,606",
+    note: "Cheaper entry point than the big accounting suites.",
+  },
+  {
+    title: "AI automation",
+    smartbooks: "Included",
+    others: "Manual or limited",
+    note: "Auto matching and smart tagging are built in.",
+  },
+  {
+    title: "WhatsApp reminders",
+    smartbooks: "Yes",
+    others: "No or extra setup",
+    note: "Keep collections and follow-ups moving on mobile.",
+  },
+  {
+    title: "Best for local businesses",
+    smartbooks: "Schools, shops, restaurants",
+    others: "Generic accounting",
+    note: "Designed for the workflows this site targets.",
+  },
+];
+
 export default function PricingComparisonSection() {
   const smartbooksColumnIndex = 2; // 0: Features, 1: Tally, 2: SmartBooks
   
   return (
-    <section id="pricing" className="w-full scroll-mt-24 bg-gradient-to-b from-white to-slate-50 py-12 md:py-20">
-      <div className="mx-auto max-w-[1500px] px-4 md:px-6">
+    <section id="pricing" className="w-full scroll-mt-24 bg-linear-to-b from-white to-slate-50 py-12 md:py-20">
+      <div className="mx-auto max-w-375 px-4 md:px-6">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
             Pricing & Features Comparison
@@ -221,7 +248,49 @@ export default function PricingComparisonSection() {
           </p>
         </div>
 
-        <div className="relative overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-lg">
+        <div className="grid gap-4 md:hidden">
+          {mobileHighlights.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_40px_rgba(15,23,42,0.08)]"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
+                    {item.title}
+                  </p>
+                  <h3 className="mt-2 text-lg font-black tracking-[-0.03em] text-[#08111f]">
+                    SmartBooks AI
+                  </h3>
+                </div>
+
+                <div className="rounded-2xl bg-[#f3e8ff] px-3 py-2 text-right">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#5a4fcf]">
+                    Others
+                  </p>
+                  <p className="mt-1 text-xs font-bold text-slate-700">
+                    {item.others}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl bg-[#5a4fcf] px-4 py-3 text-white">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
+                    SmartBooks
+                  </p>
+                  <p className="mt-1 text-sm font-black">{item.smartbooks}</p>
+                </div>
+
+                <p className="rounded-2xl bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-600">
+                  {item.note}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative hidden overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-lg md:block">
           {/* SmartBooks center highlight - responsive positioning */}
           <style>{`
             .smartbooks-column {
@@ -231,27 +300,27 @@ export default function PricingComparisonSection() {
             }
           `}</style>
 
-          <table className="w-full min-w-[1000px] border-collapse">
+          <table className="w-full min-w-250 border-collapse">
             <colgroup>
-              <col className="w-[200px]" />
-              <col className="w-[140px]" />
-              <col className="w-[140px]" />
-              <col className="w-[140px]" />
-              <col className="w-[140px]" />
-              <col className="w-[140px]" />
-              <col className="w-[140px]" />
+              <col className="w-50" />
+              <col className="w-35" />
+              <col className="w-35" />
+              <col className="w-35" />
+              <col className="w-35" />
+              <col className="w-35" />
+              <col className="w-35" />
             </colgroup>
 
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50">
-                <th className="sticky left-0 z-30 min-w-[200px] bg-slate-50 px-4 py-5 text-left text-[11px] font-bold uppercase tracking-wide text-slate-600">
+                <th className="sticky left-0 z-30 min-w-50 bg-slate-50 px-4 py-5 text-left text-[11px] font-bold uppercase tracking-wide text-slate-600">
                   Features
                 </th>
 
                 {columns.map((column) => (
                   <th
                     key={column.key}
-                    className={`relative min-w-[140px] px-2 py-5 text-center transition-colors ${
+                    className={`relative min-w-35 px-2 py-5 text-center transition-colors ${
                       column.highlight ? "smartbooks-column" : "bg-white"
                     }`}
                   >
@@ -259,7 +328,7 @@ export default function PricingComparisonSection() {
                       <div
                         className={`flex h-10 w-10 items-center justify-center ${
                           column.key === "smartbooks"
-                            ? "rounded-lg bg-gradient-to-br from-[#5a4fcf] to-[#4839a8]"
+                            ? "rounded-lg bg-linear-to-br from-[#5a4fcf] to-[#4839a8]"
                             : ""
                         }`}
                       >
@@ -401,7 +470,7 @@ function ValueBadge({ value, highlight }) {
 
 function SummaryCard({ icon, title, text }) {
   return (
-    <div className="group rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all hover:shadow-md hover:border-[#5a4fcf]/20">
+    <div className="group rounded-xl border border-slate-200 bg-linear-to-br from-white to-slate-50 p-6 transition-all hover:shadow-md hover:border-[#5a4fcf]/20">
       <div className="text-3xl mb-3">{icon}</div>
       <h3 className="text-lg font-bold text-slate-900">{title}</h3>
       <p className="mt-2.5 text-[13px] leading-relaxed text-slate-600 md:text-[14px]">

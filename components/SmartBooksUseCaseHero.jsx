@@ -262,7 +262,7 @@ function InfoPill({ item, index, side = "left" }) {
           duration: 0.65,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="relative flex h-[92px] w-[330px] items-center gap-5 overflow-hidden rounded-2xl border border-[#8175ff]/45 bg-white/[0.075] px-5 text-left shadow-[0_18px_55px_rgba(0,0,0,0.28)] backdrop-blur-xl"
+        className="relative flex h-23 w-82.5 items-center gap-5 overflow-hidden rounded-2xl border border-[#8175ff]/45 bg-white/7.5 px-5 text-left shadow-[0_18px_55px_rgba(0,0,0,0.28)] backdrop-blur-xl"
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(143,131,255,0.28),transparent_36%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.09),transparent_42%)]" />
@@ -286,7 +286,7 @@ function InfoPill({ item, index, side = "left" }) {
 
 function CenterLogo() {
   return (
-    <div className="absolute left-[720px] top-[534px] z-50 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+    <div className="absolute left-180 top-133.5 z-50 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.82, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
@@ -296,12 +296,12 @@ function CenterLogo() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="relative flex h-[178px] w-[178px] items-center justify-center rounded-[42px] border border-white/15 bg-[#4e40a2] shadow-[0_0_110px_rgba(78,64,162,0.85)]"
+        className="relative flex h-44.5 w-44.5 items-center justify-center rounded-[42px] border border-white/15 bg-[#4e40a2] shadow-[0_0_110px_rgba(78,64,162,0.85)]"
       >
         <img
           src="/icon.png"
           alt="SmartBooks AI Logo"
-          className="h-[118px] w-[118px] object-contain"
+          className="h-29.5 w-29.5 object-contain"
         />
       </motion.div>
     </div>
@@ -372,8 +372,8 @@ function ConnectorSVG({ pathLengths }) {
 
 function SmartBooksGeminiEffect({ pathLengths }) {
   return (
-    <div className="sticky mb-10 top-20 h-screen overflow-hidden">
-      <div className="relative mx-auto flex h-full max-w-[1440px] items-center justify-center">
+    <div className="sticky mb-10 top-20 hidden h-screen overflow-hidden md:block">
+      <div className="relative mx-auto flex h-full max-w-360 items-center justify-center">
         <div className="absolute top-[5%] z-30 text-center">
           <motion.p
             initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
@@ -395,7 +395,7 @@ function SmartBooksGeminiEffect({ pathLengths }) {
               duration: 0.7,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="mx-auto mt-5 max-w-[760px] px-5 text-sm font-semibold leading-7 text-white/55 sm:text-base"
+            className="mx-auto mt-5 max-w-190 px-5 text-sm font-semibold leading-7 text-white/55 sm:text-base"
           >
             SmartBooks AI connects schools, restaurants, shops, local
             businesses, and industries with AI accounting, payroll, GST reports,
@@ -403,7 +403,7 @@ function SmartBooksGeminiEffect({ pathLengths }) {
           </motion.p>
         </div>
 
-        <div className="absolute left-1/2 top-[8%] h-[890px] w-[1440px] origin-top -translate-x-1/2 scale-[0.78] sm:scale-[0.84] lg:scale-[0.9] xl:scale-100">
+        <div className="absolute left-1/2 top-[8%] h-222.5 w-360 origin-top -translate-x-1/2 scale-[0.78] sm:scale-[0.84] lg:scale-[0.9] xl:scale-100">
           <ConnectorSVG pathLengths={pathLengths} />
 
           {leftServices.map((item, index) => (
@@ -439,7 +439,7 @@ export default function SmartBooksGeminiServices() {
     <section
       ref={ref}
       id="industries"
-      className="relative h-[280vh] w-full overflow-clip scroll-mt-24 rounded-[34px] bg-[#070713]"
+      className="relative w-full overflow-clip scroll-mt-24 bg-[#070713] md:h-[280vh] md:rounded-[34px]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(82,68,167,0.42),transparent_34%),linear-gradient(180deg,#090716_0%,#120d2f_46%,#080713_100%)]" />
 
@@ -452,8 +452,33 @@ export default function SmartBooksGeminiServices() {
         }}
       />
 
-      <div className="absolute inset-x-0 top-0 z-30 h-40 bg-gradient-to-b from-[#070713] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-t from-[#070713] to-transparent" />
+      <div className="absolute inset-x-0 top-0 z-30 h-40 bg-linear-to-b from-[#070713] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-20 h-32 bg-linear-to-t from-[#070713] to-transparent" />
+
+      <div className="relative z-20 mx-auto max-w-7xl px-4 py-14 md:hidden">
+        <div className="mx-auto max-w-3xl text-center text-white">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#b8b0ff]">
+            Connected Accounting
+          </p>
+          <h2 className="mt-3 text-[34px] font-black leading-[0.96] tracking-tighter sm:text-[42px]">
+            for every business.
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-white/65">
+            SmartBooks AI connects schools, restaurants, shops, local
+            businesses, and industries with AI accounting, payroll, GST
+            reports, WhatsApp reminders, and bank sync.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-3 sm:grid-cols-2">
+          {leftServices.map((item) => (
+            <CompactUseCaseCard key={item.title} item={item} tone="left" />
+          ))}
+          {rightFeatures.map((item) => (
+            <CompactUseCaseCard key={item.title} item={item} tone="right" />
+          ))}
+        </div>
+      </div>
 
       <SmartBooksGeminiEffect
         pathLengths={[
@@ -465,5 +490,30 @@ export default function SmartBooksGeminiServices() {
         ]}
       />
     </section>
+  );
+}
+
+function CompactUseCaseCard({ item, tone }) {
+  return (
+    <div
+      className={`rounded-2xl border p-4 text-left shadow-[0_16px_40px_rgba(0,0,0,0.18)] ${
+        tone === "left"
+          ? "border-white/10 bg-white/6 text-white"
+          : "border-[#8175ff]/30 bg-[#ffffff0d] text-white"
+      }`}
+    >
+      <div className="flex items-center gap-3">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/10">
+          <Icon type={item.icon} imageUrl={item.imageUrl} />
+        </div>
+
+        <div className="min-w-0">
+          <p className="text-[15px] font-black leading-tight">{item.title}</p>
+          <p className="mt-1 text-[12px] font-semibold text-white/65">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

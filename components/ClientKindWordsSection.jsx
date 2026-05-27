@@ -77,14 +77,29 @@ export default function KindWordsSection() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#fbfaf7]">
-      <div className="relative mx-auto max-w-[1500px] px-4 md:px-6">
+    <section className="relative w-full bg-[#fbfaf7] pb-8 md:pb-0">
+      <div className="relative mx-auto max-w-375 px-4 md:px-6">
+        <div className="px-1 pt-24 text-center md:hidden">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
+            Testimonials
+          </p>
+          <h2 className="mt-3 text-[34px] font-black uppercase leading-[0.95] tracking-[0.08em] text-slate-950">
+            Kind Words
+            <br />
+            From Our Clients
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-600">
+            Real businesses using SmartBooks AI to simplify billing, fees,
+            stock, payroll, and reminders.
+          </p>
+        </div>
+
         {/* Sticky center heading */}
-        <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
+        <div className="sticky top-0 hidden h-screen items-center justify-center overflow-hidden md:flex">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,79,207,0.09),transparent_44%)]" />
 
           <h2
-            className={`kindWordsHeading relative z-0 select-none text-center text-[46px] font-black uppercase leading-[0.92] tracking-[0.08em] transition-all duration-700 ease-out sm:text-[64px] md:text-[96px] md:tracking-[0.1em] lg:text-[128px] xl:text-[148px] ${
+            className={`kindWordsHeading relative z-0 select-none text-center text-[46px] font-black uppercase leading-[0.92] tracking-[0.08em] transition-all duration-700 ease-out sm:text-[64px] md:text-[96px] md:tracking-widest lg:text-[128px] xl:text-[148px] ${
               isOutline ? "headingOutline" : "headingSolid"
             }`}
           >
@@ -95,22 +110,20 @@ export default function KindWordsSection() {
         </div>
 
         {/* Cards scrolling over heading */}
-        <div className="relative z-20 -mt-[100vh] min-h-[230vh] pb-40 pt-[88vh]">
-          <div className="grid grid-cols-1 gap-x-12 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
-            <div ref={firstCardRef}>
-              <ReviewCard review={reviews[0]} />
-            </div>
-
-            <ReviewCard review={reviews[1]} className="lg:mt-32" />
-
-            <ReviewCard review={reviews[2]} className="lg:mt-10" />
-
-            <ReviewCard review={reviews[3]} className="lg:mt-6" />
-
-            <ReviewCard review={reviews[4]} className="lg:mt-36" />
-
-            <ReviewCard review={reviews[5]} className="lg:mt-16" />
+        <div className="relative z-20 grid grid-cols-1 gap-x-12 gap-y-6 pb-16 pt-8 md:mt-[-100vh] md:min-h-[230vh] md:grid-cols-2 md:gap-y-20 md:pb-40 md:pt-[88vh] lg:grid-cols-3">
+          <div ref={firstCardRef}>
+            <ReviewCard review={reviews[0]} />
           </div>
+
+          <ReviewCard review={reviews[1]} className="lg:mt-32" />
+
+          <ReviewCard review={reviews[2]} className="lg:mt-10" />
+
+          <ReviewCard review={reviews[3]} className="lg:mt-6" />
+
+          <ReviewCard review={reviews[4]} className="lg:mt-36" />
+
+          <ReviewCard review={reviews[5]} className="lg:mt-16" />
         </div>
       </div>
 
@@ -150,16 +163,16 @@ export default function KindWordsSection() {
 function ReviewCard({ review, className = "" }) {
   return (
     <div
-      className={`group relative min-h-[330px] rounded-[28px] border border-[#d8d8d8] bg-white px-6 py-6 shadow-[0_22px_70px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(15,23,42,0.16)] ${className}`}
+      className={`group relative min-h-auto rounded-3xl border border-[#d8d8d8] bg-white px-5 py-5 shadow-[0_22px_70px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_90px_rgba(15,23,42,0.16)] sm:min-h-82.5 sm:px-6 sm:py-6 ${className}`}
     >
       {/* Top speech bubble tail */}
-      <div className="absolute -top-[17px] left-12 h-9 w-9 rotate-45 rounded-tl-[8px] border-l border-t border-[#d8d8d8] bg-white" />
+      <div className="absolute -top-4.25 left-12 hidden h-9 w-9 rotate-45 rounded-tl-lg border-l border-t border-[#d8d8d8] bg-white sm:block" />
 
       <div className="relative z-10 flex items-start gap-4">
         <Avatar review={review} />
 
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-1 text-[14px] leading-tight text-slate-500">
+          <div className="flex flex-wrap items-center gap-1 text-[13px] leading-tight text-slate-500 sm:text-[14px]">
             <span className="font-black tracking-[-0.02em] text-[#171b2f]">
               {review.name}
             </span>
@@ -179,29 +192,29 @@ function ReviewCard({ review, className = "" }) {
             {review.role} · {review.location}
           </p>
 
-          <p className="mt-7 text-[17px] font-medium leading-[1.72] tracking-[-0.01em] text-[#202342] md:text-[18px]">
+          <p className="mt-6 text-[15px] font-medium leading-[1.68] tracking-[-0.01em] text-[#202342] sm:mt-7 sm:text-[17px] md:text-[18px]">
             {review.text}
           </p>
 
-          <div className="mt-7 flex items-center gap-1 text-[19px] tracking-[0.08em] text-yellow-400">
+          <div className="mt-6 flex items-center gap-1 text-[18px] tracking-[0.08em] text-yellow-400 sm:mt-7 sm:text-[19px]">
             ★★★★★
           </div>
         </div>
 
-        <div className="text-[22px] font-black leading-none text-slate-400">
+        <div className="text-[18px] font-black leading-none text-slate-400 sm:text-[22px]">
           ...
         </div>
       </div>
 
       {/* Bottom speech bubble tail */}
-      <div className="absolute -bottom-[17px] right-12 h-9 w-9 rotate-45 rounded-br-[8px] border-b border-r border-[#d8d8d8] bg-white" />
+      <div className="absolute -bottom-4.25 right-12 hidden h-9 w-9 rotate-45 rounded-br-lg border-b border-r border-[#d8d8d8] bg-white sm:block" />
     </div>
   );
 }
 
 function Avatar({ review }) {
   return (
-    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[#5a4fcf] to-[#18b6f6] shadow-md ring-4 ring-white">
+    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-linear-to-br from-[#5a4fcf] to-[#18b6f6] shadow-md ring-4 ring-white">
       <img
         src={review.image}
         alt={review.name}

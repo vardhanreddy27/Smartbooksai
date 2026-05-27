@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function SmartBooksScrollMergeSection() {
   const sectionRef = useRef(null);
@@ -31,13 +32,50 @@ export default function SmartBooksScrollMergeSection() {
   return (
     <section
       ref={sectionRef}
-className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
-      <div className="sticky top-0 h-screen w-full overflow-hidden mt-20">
+      className="relative mt-20 w-full overflow-hidden bg-[#fbfaf7] md:h-[112vh]"
+    >
+      <div className="px-4 pb-14 pt-24 md:hidden">
+        <div className="mx-auto max-w-130 rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
+            SmartBooks AI
+          </p>
+
+          <h1 className="mt-3 text-[34px] font-black leading-[1.05] tracking-[-0.04em] text-[#101322] sm:text-[40px]">
+            Meet all-in-one platform
+            <br />
+            to{" "}
+            <span className="inline-flex rounded-2xl bg-[#bff2df] px-4 shadow-[0_0_24px_rgba(85,239,157,0.35)]">
+              {word}
+            </span>
+          </h1>
+
+          <p className="mt-4 text-sm leading-6 text-slate-600">
+            A mobile-friendly dashboard for billing, bank matching, payroll,
+            and AI insights without the clutter.
+          </p>
+
+          <div className="mt-5 grid grid-cols-2 gap-3">
+            <MobileStat label="Billing" value="Fast" />
+            <MobileStat label="AI Match" value="Auto" />
+            <MobileStat label="Health" value="Live" />
+            <MobileStat label="Insights" value="Smart" />
+          </div>
+
+          <a
+            href="tel:+919866531011"
+            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-[#5a4fcf] px-5 py-4 text-sm font-black text-white shadow-[0_16px_40px_rgba(90,79,207,0.3)] transition hover:bg-[#463891]"
+          >
+            Book Demo
+          </a>
+        </div>
+      </div>
+
+      <div className="sticky top-0 hidden h-screen w-full overflow-hidden pt-20 md:block">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,79,207,0.12),transparent_55%)]" />
 
         {/* HERO TEXT */}
         <div
-          className="absolute mb-50 left-1/2 z-30 w-full max-w-[1150px]  px-5 text-center"
+          className="absolute mb-50 left-1/2 z-30 w-full max-w-287.5 px-5 text-center"
         style={{
   top: `${lerp(8, 2, move)}%`,
   transform: `translateX(-50%) scale(${lerp(1, 0.72, move)})`,
@@ -47,7 +85,7 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
             Meet all-in-one platform
             <br />
             to{" "}
-            <span className="inline-flex rounded-[20px] bg-[#bff2df] px-5  shadow-[0_0_35px_rgba(85,239,157,0.6)]">
+            <span className="inline-flex rounded-2xl bg-[#bff2df] px-5 shadow-[0_0_35px_rgba(85,239,157,0.6)]">
               {word}
             </span>
           </h1>
@@ -55,7 +93,7 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
 
         {/* DASHBOARD SCREEN - CENTERED */}
         <div
-          className="absolute left-1/2 z-20 w-[1040px] max-w-[92vw] rounded-[32px] border-[12px] border-[#151515] bg-[#f8fafc] shadow-[0_45px_140px_rgba(15,23,42,0.24)]"
+          className="absolute left-1/2 z-20 w-260 max-w-[92vw] rounded-4xl border-12 border-[#151515] bg-[#f8fafc] shadow-[0_45px_140px_rgba(15,23,42,0.24)]"
           style={{
             top: `${lerp(64, 58, move)}%`,
             height: `${lerp(500, 570, move)}px`,
@@ -63,27 +101,24 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
           }}
         >
           {/* LEFT SIDEBAR */}
-          <div className="absolute left-0 top-0 hidden h-full w-[72px] rounded-l-[19px] bg-[#111111] md:block">
+          <div className="absolute left-0 top-0 hidden h-full w-18 rounded-l-2xl bg-[#111111] md:block">
             <div className="mx-auto mt-7 flex h-11 w-11 items-center justify-center ">
-              <img
+              <Image
                 src="/trans.png"
                 alt="SmartBooks AI"
-                className="h-full w-full object-contain"
+                fill
+                sizes="44px"
+                className="object-contain"
               />
             </div>
 
-            <div className="mt-12 flex flex-col items-center gap-7">
-              <span className="h-3 w-3 rounded-full bg-white/70" />
-              <span className="h-3 w-3 rounded-full bg-white/35" />
-              <span className="h-3 w-3 rounded-full bg-white/35" />
-              <span className="h-3 w-3 rounded-full bg-white/35" />
-            </div>
+         
           </div>
 
           {/* APP BODY */}
-          <div className="absolute left-0 top-0 h-full w-full overflow-visible rounded-[20px] bg-[#f8fafc] md:left-[72px] md:w-[calc(100%-72px)]">
+          <div className="absolute left-0 top-0 h-full w-full overflow-visible rounded-2xl bg-[#f8fafc] md:left-18 md:w-[calc(100%-72px)]">
             {/* TOP BAR */}
-            <div className="absolute left-0 top-0 z-40 h-[70px] w-full rounded-tr-[20px] border-b border-slate-200 bg-white px-6">
+            <div className="absolute left-0 top-0 z-40 h-17.5 w-full rounded-tr-2xl border-b border-slate-200 bg-white px-6">
               <div className="flex h-full items-center justify-between">
                 <div>
                   <p className="text-[23px] font-black tracking-[-0.04em] text-[#101322]">
@@ -95,7 +130,7 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
                 </div>
 
                 <div className="hidden items-center gap-3 md:flex">
-                  <div className="h-10 w-[240px] rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-semibold leading-[40px] text-slate-400">
+                  <div className="h-10 w-60 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-semibold leading-10 text-slate-400">
                     Search...
                   </div>
 
@@ -111,7 +146,7 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
               move={move}
               start={{ x: -120, y: 96, r: -5 }}
               end={{ x: 24, y: 92, r: 0 }}
-              className="w-[285px]"
+              className="w-71.25"
             >
               <FastBillingCard />
             </DashboardCard>
@@ -120,7 +155,7 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
               move={move}
               start={{ x: 720, y: 96, r: 5 }}
               end={{ x: 338, y: 92, r: 0 }}
-              className="w-[325px]"
+              className="w-132"
             >
               <AIMatchingCard />
             </DashboardCard>
@@ -129,19 +164,12 @@ className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
               move={move}
               start={{ x: -110, y: 305, r: 5 }}
               end={{ x: 24, y: 300, r: 0 }}
-              className="w-[345px]"
+              className="w-86.25"
             >
               <BusinessHealthCard />
             </DashboardCard>
 
-            <DashboardCard
-              move={move}
-              start={{ x: 735, y: 305, r: -5 }}
-              end={{ x: 398, y: 300, r: 0 }}
-              className="w-[325px]"
-            >
-              <AIInsightsCard />
-            </DashboardCard>
+          
           </div>
         </div>
       </div>
@@ -164,6 +192,17 @@ function DashboardCard({ move, start, end, className = "", children }) {
       }}
     >
       {children}
+    </div>
+  );
+}
+
+function MobileStat({ label, value }) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+        {label}
+      </p>
+      <p className="mt-1 text-sm font-black text-[#101322]">{value}</p>
     </div>
   );
 }
@@ -201,18 +240,78 @@ function AIMatchingCard() {
       </p>
 
       <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3">
-        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-          Matched Entry
-        </p>
-
-        <div className="mt-2 flex items-center justify-between">
-          <span className="text-sm font-bold text-[#101322]">
-            Restaurant Fee
-          </span>
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              Today&apos;s match
+            </p>
+            <p className="mt-1 text-sm font-black text-[#101322]">
+              5 matched • 1 pending
+            </p>
+          </div>
 
           <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-600">
             98%
           </span>
+        </div>
+
+        <div className="mt-3 space-y-2">
+          <div className="rounded-xl bg-white px-3 py-2 shadow-sm">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
+                  Bank entry
+                </p>
+                <p className="text-sm font-black text-[#101322]">
+                  Restaurant Fee
+                </p>
+              </div>
+              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black text-emerald-700">
+                Matched
+              </span>
+            </div>
+            <p className="mt-1 text-[12px] font-medium text-slate-500">
+              Linked to sale INV-2048 and UPI payment from Table 08.
+            </p>
+          </div>
+
+          <div className="rounded-xl bg-white px-3 py-2 shadow-sm">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
+                  Sales record
+                </p>
+                <p className="text-sm font-black text-[#101322]">
+                  School Fee Collection
+                </p>
+              </div>
+              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black text-emerald-700">
+                Matched
+              </span>
+            </div>
+            <p className="mt-1 text-[12px] font-medium text-slate-500">
+              Fee receipt auto-linked with parent payment and due balance.
+            </p>
+          </div>
+
+          <div className="rounded-xl bg-white px-3 py-2 shadow-sm">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
+                  Pending
+                </p>
+                <p className="text-sm font-black text-[#101322]">
+                  Supplier Transfer
+                </p>
+              </div>
+              <span className="rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-black text-amber-700">
+                Review
+              </span>
+            </div>
+            <p className="mt-1 text-[12px] font-medium text-slate-500">
+              AI suggests 1 possible match from purchase ledger and bank UTR.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -239,7 +338,7 @@ function BusinessHealthCard() {
         </div>
 
         <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-          <div className="h-full w-[87%] rounded-full bg-gradient-to-r from-[#5a4fcf] via-[#55ef9d] to-[#facc15]" />
+          <div className="h-full w-[87%] rounded-full bg-linear-to-r from-[#5a4fcf] via-[#55ef9d] to-[#facc15]" />
         </div>
       </div>
 
@@ -251,30 +350,7 @@ function BusinessHealthCard() {
   );
 }
 
-function AIInsightsCard() {
-  return (
-    <div className="grid grid-cols-[1fr_78px] items-center gap-4">
-      <div>
-        <h3 className="text-[18px] font-black tracking-[-0.03em] text-[#101322]">
-          AI insights
-        </h3>
 
-        <p className="mt-1 text-[13px] font-medium leading-relaxed text-[#66758f]">
-          Get smart suggestions to reduce expenses and grow.
-        </p>
-
-        <button className="mt-4 rounded-xl bg-black px-4 py-3 text-xs font-bold text-white">
-          Explore
-        </button>
-      </div>
-
-      <div className="relative h-[82px] rounded-3xl bg-gradient-to-br from-[#5a4fcf] to-[#55ef9d]">
-        <div className="absolute left-4 top-4 h-8 w-8 rounded-full bg-white/80" />
-        <div className="absolute bottom-4 right-4 h-10 w-10 rounded-2xl bg-white/70" />
-      </div>
-    </div>
-  );
-}
 
 /* ---------------- HELPERS ---------------- */
 

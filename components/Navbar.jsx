@@ -15,16 +15,16 @@ export default function Navbar() {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full px-4 py-3">
-      <nav className="mx-auto grid h-[76px] max-w-[1280px] grid-cols-[auto_1fr_auto] items-center rounded-full border border-[#6b5fd0] bg-[#5244a7] px-6 shadow-[0_12px_35px_rgba(82,68,167,0.28)] backdrop-blur-xl">
+      <nav className="mx-auto grid h-17 max-w-7xl grid-cols-[auto_1fr_auto] items-center rounded-full border border-[#6b5fd0] bg-[#5244a7] px-4 shadow-[0_12px_35px_rgba(82,68,167,0.28)] backdrop-blur-xl sm:h-18 sm:px-6 md:h-19">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-[60px] w-[230px] shrink-0">
+          <div className="relative h-11.5 w-40 shrink-0 sm:h-13 sm:w-50 md:h-15 md:w-57.5">
             <Image
               src="/logo.png"
               alt="SmartBooks AI Logo"
               fill
               priority
-              sizes="230px"
+              sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, 230px"
               className="object-contain object-left"
             />
           </div>
@@ -83,14 +83,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="mx-auto mt-3 max-w-[1280px] rounded-3xl border border-[#6b5fd0] bg-[#5244a7] p-4 shadow-xl md:hidden">
+        <div className="mx-auto mt-3 max-h-[calc(100vh-110px)] max-w-7xl overflow-y-auto rounded-3xl border border-[#6b5fd0] bg-[#5244a7] p-4 shadow-xl md:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-2xl px-4 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10 hover:text-white"
+                className="rounded-2xl px-4 py-3 text-base font-semibold text-white/90 transition hover:bg-white/10 hover:text-white"
               >
                 {item.label}
               </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
           <a
             href="tel:+919866531011"
             onClick={() => setIsOpen(false)}
-            className="mt-4 block rounded-full bg-white px-4 py-3 text-center text-sm font-bold text-[#5244a7] transition hover:bg-slate-100"
+            className="mt-4 block rounded-full bg-white px-4 py-3 text-center text-base font-bold text-[#5244a7] transition hover:bg-slate-100"
           >
             Book Demo
           </a>
