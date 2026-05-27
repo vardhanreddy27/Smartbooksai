@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SmartBooksFooter() {
   return (
-    <footer id="contact" className="relative mt-20 w-full overflow-hidden bg-[#5a42e8] text-white md:mt-24">
+    <footer id="contact" className="relative  w-full overflow-hidden bg-[#5a42e8] text-white md:mt-24">
       {/* Top CTA Card */}
       <div className="relative z-20 mx-auto mt-0 max-w-355 px-4 md:px-8">
         <div className="relative -top-6 flex flex-col items-start justify-between gap-6 rounded-[22px] bg-[#00000075] px-5 py-8 text-white shadow-[0_28px_80px_rgba(15,23,42,0.18)] md:-top-10 md:flex-row md:items-center md:gap-8 md:px-16 md:py-14">
