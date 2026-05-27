@@ -2,25 +2,25 @@ import React from "react";
 
 export default function SmartBooksFooter() {
   return (
-    <footer className="relative mt-24 w-full overflow-hidden bg-[#5a42e8] text-white">
+    <footer id="contact" className="relative mt-24 w-full overflow-hidden bg-[#5a42e8] text-white">
       {/* Top CTA Card */}
       <div className="relative z-20 mx-auto -mt-0 max-w-[1420px] px-4 md:px-8">
         <div className="relative -top-10 flex flex-col items-start justify-between gap-8 rounded-[22px] bg-[#00000075] px-8 py-10 text-white shadow-[0_28px_80px_rgba(15,23,42,0.18)] md:flex-row md:items-center md:px-16 md:py-14">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-[#5a42e8]">
-              SmartBooks AI Demo
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-white]">
+              SmartBooks AI 
             </p>
 
-            <h2 className="max-w-[620px] text-[32px] font-medium leading-[1.05] tracking-[-0.04em] md:text-[46px]">
+            <h2 className="max-w-[620px] text-[32px] font-medium  md:text-[46px]">
               Meet with a Smart Accounting & Business Software Expert
             </h2>
           </div>
 
           <a
-            href="#contact"
-            className="inline-flex rounded-[12px] bg-black px-8 py-5 text-[16px] font-extrabold text-white shadow-[0_16px_35px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#111827]"
+            href="tel:+919866531011"
+            className="inline-flex rounded-[12px] bg-[#5a4fcf] px-8 py-5 text-[16px] font-extrabold text-white shadow-[0_16px_35px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#111827]"
           >
-            Talk with an expert
+           Book Demo
           </a>
         </div>
       </div>
@@ -31,10 +31,10 @@ export default function SmartBooksFooter() {
           {/* Left Area */}
           <div>
             {/* Logo */}
-            <div className="mb-14 flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center ">
+            <div className="mb-14 flex gap-3">
+              <div className="flex h-19 w-19 items-center  ">
                 <img
-                  src="/icon.png"
+                  src="/trans.png"
                   alt="SmartBooks AI"
                   className="h-full w-full object-contain"
                 />
@@ -56,7 +56,7 @@ export default function SmartBooksFooter() {
               <FooterLink href="#pricing">Pricing</FooterLink>
               <FooterLink href="#ai-tools">AI Tools</FooterLink>
               <FooterLink href="#contact">Contact</FooterLink>
-              <FooterLink href="#demo">Book Demo</FooterLink>
+              <FooterLink href="tel:+919866531011">Book Demo</FooterLink>
               <FooterLink href="#schools">For Schools</FooterLink>
               <FooterLink href="#restaurants">For Restaurants</FooterLink>
               <FooterLink href="#shops">For Shops</FooterLink>

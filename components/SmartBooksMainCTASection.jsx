@@ -174,16 +174,16 @@ function FastBillingCard() {
   return (
     <div>
       <h3 className="text-[18px] font-black tracking-[-0.03em] text-[#101322]">
-        Smart billing
+        Fast billing
       </h3>
 
       <p className="mt-1 text-[13px] font-medium leading-relaxed text-[#66758f]">
-        Create bills, invoices, receipts, and share instantly on WhatsApp.
+        Create invoices and send on WhatsApp instantly.
       </p>
 
       <div className="mt-4 space-y-3">
         <InputLine label="Invoice No" value="SB-2026-001" />
-        <InputLine label="Send To" value="WhatsApp Customer" />
+        <InputLine label="Customer" value="Local Business" />
       </div>
     </div>
   );
@@ -193,21 +193,21 @@ function AIMatchingCard() {
   return (
     <div>
       <h3 className="text-[18px] font-black tracking-[-0.03em] text-[#101322]">
-        AI bank matching
+        AI auto matching
       </h3>
 
       <p className="mt-1 text-[13px] font-medium leading-relaxed text-[#66758f]">
-        Auto-match sales, fees, purchases, expenses, and payments.
+        Match bank entries with sales and payments.
       </p>
 
       <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3">
         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-          Auto Matched
+          Matched Entry
         </p>
 
         <div className="mt-2 flex items-center justify-between">
           <span className="text-sm font-bold text-[#101322]">
-            Fee / Sale Payment
+            Restaurant Fee
           </span>
 
           <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-600">
@@ -224,17 +224,17 @@ function BusinessHealthCard() {
     <div>
       <div className="flex items-center justify-between">
         <h3 className="text-[18px] font-black tracking-[-0.03em] text-[#101322]">
-          Business control
+          Business health
         </h3>
 
         <button className="rounded-xl bg-slate-100 px-3 py-2 text-[11px] font-black text-[#66758f]">
-          Live
+          View
         </button>
       </div>
 
       <div className="mt-4">
         <div className="mb-2 flex items-center justify-between text-[13px] font-bold text-[#66758f]">
-          <span>Cashflow health</span>
+          <span>Cashflow</span>
           <span>87%</span>
         </div>
 
@@ -244,8 +244,8 @@ function BusinessHealthCard() {
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3">
-        <Metric label="Collections" value="₹52K" />
-        <Metric label="Expenses" value="₹18K" />
+        <Metric label="Sales" value="₹52K" />
+        <Metric label="Profit" value="₹18K" />
       </div>
     </div>
   );
@@ -256,11 +256,11 @@ function AIInsightsCard() {
     <div className="grid grid-cols-[1fr_78px] items-center gap-4">
       <div>
         <h3 className="text-[18px] font-black tracking-[-0.03em] text-[#101322]">
-          AI growth insights
+          AI insights
         </h3>
 
         <p className="mt-1 text-[13px] font-medium leading-relaxed text-[#66758f]">
-          Get smart suggestions for pricing, stock, expenses, and profit.
+          Get smart suggestions to reduce expenses and grow.
         </p>
 
         <button className="mt-4 rounded-xl bg-black px-4 py-3 text-xs font-bold text-white">
@@ -275,6 +275,7 @@ function AIInsightsCard() {
     </div>
   );
 }
+
 /* ---------------- HELPERS ---------------- */
 
 function InputLine({ label, value }) {

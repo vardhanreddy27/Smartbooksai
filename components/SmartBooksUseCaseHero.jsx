@@ -438,7 +438,8 @@ export default function SmartBooksGeminiServices() {
   return (
     <section
       ref={ref}
-      className="relative h-[280vh] w-full overflow-clip rounded-[34px] bg-[#070713]"
+      id="industries"
+      className="relative h-[280vh] w-full overflow-clip scroll-mt-24 rounded-[34px] bg-[#070713]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(82,68,167,0.42),transparent_34%),linear-gradient(180deg,#090716_0%,#120d2f_46%,#080713_100%)]" />
 
@@ -451,7 +452,7 @@ export default function SmartBooksGeminiServices() {
         }}
       />
 
-      <div className="absolute inset-x-0 top-0 z-20 h-32 bg-gradient-to-b from-[#070713] to-transparent" />
+      <div className="absolute inset-x-0 top-0 z-30 h-40 bg-gradient-to-b from-[#070713] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-t from-[#070713] to-transparent" />
 
       <SmartBooksGeminiEffect

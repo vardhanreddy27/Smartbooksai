@@ -38,8 +38,21 @@ const bottomFeatures = [
 
 export default function FeatureCardsSection() {
   return (
-    <section className="w-full py-8 md:py-10">
+    <section id="ai-tools" className="w-full scroll-mt-24 py-8 md:py-10">
       <div className="mx-auto max-w-[1320px] px-4 md:px-6">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
+            Powerful Features
+          </p>
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#08111f] md:text-4xl lg:text-5xl">
+            AI Tools
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
+            Advanced AI-powered accounting features for modern businesses
+          </p>
+        </div>
+
         {/* Top row */}
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-3">
           {topFeatures.map((item, index) => (

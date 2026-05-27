@@ -19,9 +19,17 @@ export default function FeaturesSection() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="relative z-20 mx-auto max-w-7xl px-6">
-        <h2 className="mb-10 text-center text-4xl font-extrabold tracking-tight text-slate-950 md:mb-12 md:text-5xl">
-          Features
-        </h2>
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
+            What We Offer
+          </p>
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#08111f] md:text-4xl lg:text-5xl">
+            Features
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
+            All in one place
+          </p>
+        </div>
       </div>
 
       <div className="absolute left-0 top-[245px] hidden h-[250px] w-[48%] bg-slate-100/80 md:block" />

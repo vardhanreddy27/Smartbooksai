@@ -203,7 +203,7 @@ export default function PricingComparisonSection() {
   const smartbooksColumnIndex = 2; // 0: Features, 1: Tally, 2: SmartBooks
   
   return (
-    <section className="w-full bg-gradient-to-b from-white to-slate-50 py-12 md:py-20">
+    <section id="pricing" className="w-full scroll-mt-24 bg-gradient-to-b from-white to-slate-50 py-12 md:py-20">
       <div className="mx-auto max-w-[1500px] px-4 md:px-6">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">

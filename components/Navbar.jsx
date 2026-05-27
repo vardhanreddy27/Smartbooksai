@@ -45,12 +45,12 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center justify-end md:flex">
-          <Link
-            href="/demo"
+          <a
+            href="tel:+919866531011"
             className="rounded-full bg-white px-7 py-3 text-[15px]  shadow-[0_8px_20px_rgba(255,255,255,0.18)] transition hover:bg-slate-100"
           >
             <p className="font-bold text-[#5244a7] shadow-[0_8px_20px_rgba(255,255,255,0.18)]">Book Demo</p>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -97,13 +97,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Link
-            href="/demo"
+          <a
+            href="tel:+919866531011"
             onClick={() => setIsOpen(false)}
             className="mt-4 block rounded-full bg-white px-4 py-3 text-center text-sm font-bold text-[#5244a7] transition hover:bg-slate-100"
           >
             Book Demo
-          </Link>
+          </a>
         </div>
       )}
     </header>
