@@ -6,6 +6,7 @@ import FeaturesSection from '@/components/FeaturesSection'
 import HeroSection from '@/components/HeroSection'
 import Navbar from '@/components/Navbar'
 import PricingComparisonSection from '@/components/PricingComparisonSection'
+import SmartBooksMainCTASection from '@/components/SmartBooksMainCTASection'
 import SmartBooksFooter from '@/components/SmartBooksFooter'
 import SmartBooksUseCaseHero from '@/components/SmartBooksUseCaseHero'
 import SocialProofSection from '@/components/SocialProofSection'
@@ -15,6 +16,7 @@ function index() {
   return (
     <>
       <Navbar />
+      <SmartBooksMainCTASection />
       <HeroSection />
       <SocialProofSection />
       <BankIntegration /> 
