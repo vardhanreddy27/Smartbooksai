@@ -9,6 +9,7 @@ import PricingComparisonSection from '@/components/PricingComparisonSection'
 import SmartBooksMainCTASection from '@/components/SmartBooksMainCTASection'
 import SmartBooksFooter from '@/components/SmartBooksFooter'
 import SmartBooksUseCaseHero from '@/components/SmartBooksUseCaseHero'
+import SmartBooksPricingSection from '@/components/SmartBooksPricingSection'
 import SocialProofSection from '@/components/SocialProofSection'
 import React from 'react'
 
@@ -27,6 +28,7 @@ function index() {
 
       <FeaturesSection />                       
        <FeatureCardsSection />
+       <SmartBooksPricingSection />
        <PricingComparisonSection />
        <ClientKindWordsSection />
        <SmartBooksFooter />

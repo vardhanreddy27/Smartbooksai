@@ -11,7 +11,8 @@ export default function SmartBooksScrollMergeSection() {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
-      const value = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0;
+      const value =
+        total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0;
 
       setProgress(value);
     };
@@ -32,10 +33,11 @@ export default function SmartBooksScrollMergeSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative mt-20 w-full overflow-hidden bg-[#fbfaf7] md:h-[112vh]"
+      className="relative  w-full overflow-hidden bg-[#fbfaf7] md:min-h-[112vh]"
     >
+      {/* MOBILE */}
       <div className="px-4 pb-14 pt-24 md:hidden">
-        <div className="mx-auto max-w-130 rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
+        <div className=" mx-auto max-w-130 rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#5a4fcf]">
             SmartBooks AI
           </p>
@@ -70,18 +72,37 @@ export default function SmartBooksScrollMergeSection() {
         </div>
       </div>
 
-      <div className="sticky top-0 hidden h-screen w-full overflow-hidden pt-20 md:block">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,79,207,0.12),transparent_55%)]" />
+      {/* DESKTOP */}
+      <div className="mt-26 sticky top-0 hidden h-screen w-full overflow-hidden pt-20 md:block">
+        {/* BACKGROUND GLOW */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(90,79,207,0.12),transparent_55%)]" />
+
+        {/* SIDEWAYS KEYBOARD BACKGROUND */}
+        <div className="pointer-events-none absolute -left-72 top-8 z-1 h-180 w-245 rotate-[-24deg] opacity-[0.28]">
+          <div className="relative h-full w-full">
+            <Image
+              src="/keyboard.png"
+              alt=""
+              fill
+              priority
+              sizes="980px"
+              className="object-contain mix-blend-multiply"
+            />
+          </div>
+        </div>
+
+        {/* SOFT FADE OVER KEYBOARD */}
+        <div className="pointer-events-none absolute inset-0 z-2 bg-linear-to-r from-[#fbfaf7]/10 via-[#fbfaf7]/55 to-[#fbfaf7]" />
 
         {/* HERO TEXT */}
         <div
-          className="absolute mb-50 left-1/2 z-30 w-full max-w-287.5 px-5 text-center"
-        style={{
-  top: `${lerp(8, 2, move)}%`,
-  transform: `translateX(-50%) scale(${lerp(1, 0.72, move)})`,
-}}
+          className="absolute left-1/2 z-30 mb-50 w-full max-w-287.5 px-5 text-center"
+          style={{
+            top: `${lerp(8, 2, move)}%`,
+            transform: `translateX(-50%) scale(${lerp(1, 0.72, move)})`,
+          }}
         >
-          <h1 className="  mx-auto text-center text-[32px] font-black  text-[#101322] sm:text-[46px] md:text-[64px] lg:text-[76px]">
+          <h1 className="mx-auto text-center text-[32px] font-black text-[#101322] sm:text-[46px] md:text-[64px] lg:text-[76px]">
             Meet all-in-one platform
             <br />
             to{" "}
@@ -91,18 +112,18 @@ export default function SmartBooksScrollMergeSection() {
           </h1>
         </div>
 
-        {/* DASHBOARD SCREEN - CENTERED */}
+        {/* DASHBOARD SCREEN */}
         <div
           className="absolute left-1/2 z-20 w-260 max-w-[92vw] rounded-4xl border-12 border-[#151515] bg-[#f8fafc] shadow-[0_45px_140px_rgba(15,23,42,0.24)]"
           style={{
             top: `${lerp(64, 58, move)}%`,
             height: `${lerp(500, 570, move)}px`,
-            transform: `translate(-50%, -50%)`,
+            transform: "translate(-50%, -50%)",
           }}
         >
           {/* LEFT SIDEBAR */}
           <div className="absolute left-0 top-0 hidden h-full w-18 rounded-l-2xl bg-[#111111] md:block">
-            <div className="mx-auto mt-7 flex h-11 w-11 items-center justify-center ">
+            <div className="relative mx-auto mt-7 flex h-11 w-11 items-center justify-center">
               <Image
                 src="/trans.png"
                 alt="SmartBooks AI"
@@ -111,8 +132,6 @@ export default function SmartBooksScrollMergeSection() {
                 className="object-contain"
               />
             </div>
-
-         
           </div>
 
           {/* APP BODY */}
@@ -168,8 +187,6 @@ export default function SmartBooksScrollMergeSection() {
             >
               <BusinessHealthCard />
             </DashboardCard>
-
-          
           </div>
         </div>
       </div>
@@ -195,6 +212,8 @@ function DashboardCard({ move, start, end, className = "", children }) {
     </div>
   );
 }
+
+/* ---------------- MOBILE STAT ---------------- */
 
 function MobileStat({ label, value }) {
   return (
@@ -266,10 +285,12 @@ function AIMatchingCard() {
                   Restaurant Fee
                 </p>
               </div>
+
               <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black text-emerald-700">
                 Matched
               </span>
             </div>
+
             <p className="mt-1 text-[12px] font-medium text-slate-500">
               Linked to sale INV-2048 and UPI payment from Table 08.
             </p>
@@ -285,10 +306,12 @@ function AIMatchingCard() {
                   School Fee Collection
                 </p>
               </div>
+
               <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-black text-emerald-700">
                 Matched
               </span>
             </div>
+
             <p className="mt-1 text-[12px] font-medium text-slate-500">
               Fee receipt auto-linked with parent payment and due balance.
             </p>
@@ -304,10 +327,12 @@ function AIMatchingCard() {
                   Supplier Transfer
                 </p>
               </div>
+
               <span className="rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-black text-amber-700">
                 Review
               </span>
             </div>
+
             <p className="mt-1 text-[12px] font-medium text-slate-500">
               AI suggests 1 possible match from purchase ledger and bank UTR.
             </p>
@@ -349,8 +374,6 @@ function BusinessHealthCard() {
     </div>
   );
 }
-
-
 
 /* ---------------- HELPERS ---------------- */
 
