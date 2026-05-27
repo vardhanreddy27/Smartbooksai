@@ -32,7 +32,7 @@ export default function SmartBooksScrollMergeSection() {
     <section
       ref={sectionRef}
 className="relative h-[112vh] w-full overflow-hidden bg-[#fbfaf7]"    >
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="sticky top-0 h-screen w-full overflow-hidden mt-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,79,207,0.12),transparent_55%)]" />
 
         {/* HERO TEXT */}
