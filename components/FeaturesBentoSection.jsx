@@ -138,8 +138,11 @@ export default function FeaturesBentoSection() {
             <div className="relative z-10 max-w-112.5">
               <h3 className="text-xl font-black">Billing and Payments</h3>
               <p className="mt-3 text-sm font-semibold leading-6 text-white/75">
-                Collect fees, invoices, UPI, cash, and bank payments. Track
-                pending dues and send WhatsApp payment updates.
+                Collect fees, invoices, UPI, cash, and bank <br /> payments.
+                
+            
+                 Track
+                pending dues and send <br />WhatsApp payment updates.
               </p>
 
               <button className="mt-5 text-sm font-black text-white">

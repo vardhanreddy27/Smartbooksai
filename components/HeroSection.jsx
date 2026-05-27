@@ -738,7 +738,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-[#fbfaff] px-10 pt-28 md:pt-[118px]"
+      className="relative min-h-screen overflow-hidden bg-[#fbfaff] pt-28 md:pt-[118px]"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-40 top-0 h-[520px] w-[520px] rounded-full bg-[#5244a7]/12 blur-[120px]" />
